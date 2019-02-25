@@ -3,18 +3,21 @@
   <head>
       <title>Vue App for UI5 </title>
       <script src="https://unpkg.com/vue"></script>
-      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="../css/style.css">
   </head>
   <body>
 
     <div id="app">
-      {{text}}
+      <ul>
+        <li v-for="color in colors">{{color}}</li>
+      </ul>
     </div>
      <script>
+     //lists
        var app = new Vue({
          el: '#app',
          data: {
-           text: 'Hello, World!'
+           colors: ['red', 'green', 'blue', 'yellow']
          }
        })
      </script>
