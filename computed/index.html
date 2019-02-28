@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Vue App for UI5 </title>
+      <script src="https://unpkg.com/vue"></script>
+      <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+
+    <div id="app">
+      <span>Yazıyı değiştir</span>
+      <input v-model="text" placeholder="Büyük harf, küçülür..."/>
+      <div>Küçük hali: {{lowerText}} </div>
+    </div>
+     <script>
+     //computed
+
+       var app = new Vue({
+         el: '#app',
+         data: {
+           text: ''
+         },
+         computed: {
+           lowerText() {
+             return this.text.toLowerCase()
+           }
+         }
+       })
+     </script>
+  </body>
+</html>

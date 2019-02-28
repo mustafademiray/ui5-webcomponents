@@ -8,14 +8,38 @@
   <body>
 
     <div id="app">
-
+      <counter v-bind:add-num="1"></counter>
     </div>
      <script>
      //components
+       var counter = Vue.component('counter', {
+         template: `
+         <div>
+            <div> Sayı: {{this.count}} </div>
+            <button class="vue-btn" @click="increment">Sayıyı bir arttır!</button>
+         </div>
+         `,
+         props: {
+           addNum: {
+             type: Number,
+             default: 4
+           }
+         },
+         data(){
+           return {
+             count: 0
+           }
+         },
+         methods: {
+           increment(){
+             this.count += this.addNum
+           }
+         }
+       })
        var app = new Vue({
          el: '#app',
-         data: {
-
+         components: {
+           counter
          }
        })
      </script>
