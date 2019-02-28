@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Vue App for UI5 </title>
+      <script src="https://unpkg.com/vue"></script>
+      <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+
+    <div id="app">
+      Sayfa yüklendi!
+    </div>
+     <script>
+     //hooks
+
+       var app = new Vue({
+         el: '#app',
+         data: {
+           count: 0
+         },
+         methods: {
+           alertTime(){
+             alert(`Sayfa yaratıldı! -daha yüklenmedi-`)
+           }
+         },
+         created() {
+           //sayfa yüklenmeden önce
+           this.alertTime()
+         },
+         mounted() {
+           //sayfa yüklendikten sonra
+           this.alertTime()
+         },
+         updated(){
+           console.log('sayfa degisti, update tetiklendi')
+         }
+       })
+     </script>
+  </body>
+</html>
