@@ -22,3 +22,7 @@
 .note {
   padding: 5px;
 }
+
+.close {
+  text-align: right;
+}
